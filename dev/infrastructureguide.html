@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Infrastructure Guide &mdash; MetPy 1.0</title>
+  <title>Infrastructure Guide &mdash; MetPy 1.0.0rc1</title>
   
 
   
@@ -34,16 +34,20 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+  
     <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="_static/gallery-binder.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/gallery-dataframe.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="MetPy 1.0" href="index.html"/>
+    <link rel="top" title="MetPy 1.0.0rc1" href="index.html"/>
         <link rel="next" title="Citing MetPy" href="citing.html"/>
         <link rel="prev" title="Contributors Guide" href="CONTRIBUTING.html"/> 
 
@@ -80,7 +84,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>1.0</option>
+                      <option value=''>1.0.0rc1</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -244,13 +248,13 @@ checked with <code class="docutils literal notranslate"><span class="pre">doc8</
 <div class="section" id="other-tools">
 <h2>Other Tools<a class="headerlink" href="#other-tools" title="Permalink to this headline">¶</a></h2>
 <p>Continuous integration is performed by <a class="reference external" href="http://www.travis-ci.com/Unidata/MetPy">Travis CI</a>
-and <a class="reference external" href="https://ci.appveyor.com/project/Unidata/metpy/branch/master">AppVeyor</a>.
+and <a class="reference external" href="https://github.com/Unidata/MetPy/actions?query=workflow%3ACI">GitHub Actions</a>.
 Travis runs the unit tests on Linux for all supported versions of Python, as well as runs
 against the minimum package versions. <code class="docutils literal notranslate"><span class="pre">flake8</span></code> (with the <code class="docutils literal notranslate"><span class="pre">pep8-naming</span></code> and
 <code class="docutils literal notranslate"><span class="pre">flake8-quotes</span></code> plugins) is also run against the code to check formatting. Travis is also
-used to build the documentation and to run the examples to ensure they stay working. AppVeyor
-is a similar service; here the tests and examples are run against Python 2 and 3 for both
-32- and 64-bit versions of Windows.</p>
+used to build the documentation and to run the examples to ensure they stay working. We use
+a custom action running on GitHub to handle running all the tests and building the docs
+across a variety of operating systems and Python versions.</p>
 <p>Test coverage is monitored by <a class="reference external" href="https://codecov.io/github/Unidata/MetPy">codecov.io</a>.</p>
 <p>The following services are used to track code quality:</p>
 <ul class="simple">
@@ -269,8 +273,8 @@ that were closed for the relevant milestone.</p>
 <div class="section" id="pypi">
 <h3>PyPI<a class="headerlink" href="#pypi" title="Permalink to this headline">¶</a></h3>
 <p>Once the new release is published on GitHub, this will create the tag, which will trigger
-new builds on Travis (and AppVeyor, but that’s not relevant). When the main test build on
-Travis (currently Python 3 tests) succeeds, Travis will handle building the source
+new builds on Travis (and our GitHub action, but that’s not relevant). When the main test
+build on Travis (currently Python 3 tests) succeeds, Travis will handle building the source
 distribution and wheels, and upload them to PyPI.</p>
 <p>To build and upload manually (if for some reason it is necessary):</p>
 <ol class="arabic simple">
@@ -328,7 +332,7 @@ packages to anaconda.org.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2019, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
-      Last updated on Jan 16, 2020 at 01:31:16.
+      Last updated on Aug 10, 2020 at 03:12:47.
 
     </p>
   </div>
@@ -344,9 +348,6 @@ packages to anaconda.org.</p>
   ga('send', 'pageview');
 </script>
 <script>var version_json_loc = "../versions.json";</script>
-<p>Do you enjoy using MetPy?
-  <a href="https://saythanks.io/to/unidata" class="btn btn-neutral" title="Say Thanks!" accesskey="n">Say Thanks!</a>
-</p>
 
 
 </footer>
@@ -365,7 +366,7 @@ packages to anaconda.org.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0.0rc1',
+            VERSION:'1.0.0rc1.post217+g06dd809',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -378,7 +379,7 @@ packages to anaconda.org.</p>
       <script type="text/javascript" src="_static/doctools.js"></script>
       <script type="text/javascript" src="_static/language_data.js"></script>
       <script type="text/javascript" src="_static/pop_ver.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

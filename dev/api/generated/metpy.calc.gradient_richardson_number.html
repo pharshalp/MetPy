@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>diff &mdash; MetPy 1.0</title>
+  <title>gradient_richardson_number &mdash; MetPy 1.0.0rc1</title>
   
 
   
@@ -17,7 +17,7 @@
   
   
   
-    <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.units.diff.html"/>
+    <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.gradient_richardson_number.html"/>
   
 
   
@@ -34,19 +34,23 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
   
-    <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 1.0" href="../../index.html"/>
-        <link rel="up" title="units" href="metpy.units.html"/>
-        <link rel="next" title="masked_array" href="metpy.units.masked_array.html"/>
-        <link rel="prev" title="concatenate" href="metpy.units.concatenate.html"/> 
+    <link rel="top" title="MetPy 1.0.0rc1" href="../../index.html"/>
+        <link rel="up" title="calc" href="metpy.calc.html"/>
+        <link rel="next" title="tke" href="metpy.calc.tke.html"/>
+        <link rel="prev" title="friction_velocity" href="metpy.calc.friction_velocity.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -81,7 +85,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>1.0</option>
+                      <option value=''>1.0.0rc1</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -126,22 +130,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/index.html">Tutorials</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="metpy.constants.html">constants</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="metpy.units.html">units</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.atleast_1d.html">atleast_1d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.atleast_2d.html">atleast_2d</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.check_units.html">check_units</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.concatenate.html">concatenate</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">diff</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.masked_array.html">masked_array</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.pandas_dataframe_to_unit_arrays.html">pandas_dataframe_to_unit_arrays</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.signature.html">signature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.Parameter.html">Parameter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.DimensionalityError.html">DimensionalityError</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.units.UndefinedUnitError.html">UndefinedUnitError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.units.html">units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.io.html">metpy.io</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="metpy.calc.html">calc</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#dry-thermodynamics">Dry Thermodynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#moist-thermodynamics">Moist Thermodynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#soundings">Soundings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#dynamic-kinematic">Dynamic/Kinematic</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="metpy.calc.html#boundary-layer-turbulence">Boundary Layer/Turbulence</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="metpy.calc.brunt_vaisala_frequency.html">brunt_vaisala_frequency</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metpy.calc.brunt_vaisala_frequency_squared.html">brunt_vaisala_frequency_squared</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metpy.calc.brunt_vaisala_period.html">brunt_vaisala_period</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metpy.calc.friction_velocity.html">friction_velocity</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">gradient_richardson_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metpy.calc.tke.html">tke</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="metpy.io.html">io</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metpy.calc.html">calc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#mathematical-functions">Mathematical Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#apparent-temperature">Apparent Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#standard-atmosphere">Standard Atmosphere</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#smoothing">Smoothing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#other">Other</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.html">plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.ctables.html">ctables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.interpolate.html">interpolate</a></li>
@@ -202,9 +213,9 @@
         
           <li><a href="../index.html">Reference Guide</a> &raquo;</li>
         
-          <li><a href="metpy.units.html">units</a> &raquo;</li>
+          <li><a href="metpy.calc.html">calc</a> &raquo;</li>
         
-      <li>diff</li>
+      <li>gradient_richardson_number</li>
     
     
     <li class="source-link">
@@ -212,7 +223,7 @@
             
                 
                 
-                <a href="https://github.com/Unidata/MetPy/issues/new?title=Suggested%20improvement%20for%20api/generated/metpy.units.diff&body=Please%20describe%20what%20could%20be%20improved%20about%20this%20page%20or%20the%20typo/mistake%20that%20you%20found%3A"
+                <a href="https://github.com/Unidata/MetPy/issues/new?title=Suggested%20improvement%20for%20api/generated/metpy.calc.gradient_richardson_number&body=Please%20describe%20what%20could%20be%20improved%20about%20this%20page%20or%20the%20typo/mistake%20that%20you%20found%3A"
                    class="fa fa-github"> Improve this page</a>
             
         
@@ -226,31 +237,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="diff">
-<h1>diff<a class="headerlink" href="#diff" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
-<dt id="metpy.units.diff">
-<code class="sig-prename descclassname">metpy.units.</code><code class="sig-name descname">diff</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/units.html#diff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.units.diff" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calculate the n-th discrete difference along given axis.</p>
-<p>Wraps <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.diff.html#numpy.diff" title="(in NumPy v1.17)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.diff()</span></code></a> to handle units.</p>
+  <div class="section" id="gradient-richardson-number">
+<h1>gradient_richardson_number<a class="headerlink" href="#gradient-richardson-number" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="metpy.calc.gradient_richardson_number">
+<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">gradient_richardson_number</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">height</span></em>, <em class="sig-param"><span class="n">potential_temperature</span></em>, <em class="sig-param"><span class="n">u</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">axis</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/thermo.html#gradient_richardson_number"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.gradient_richardson_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the gradient (or flux) Richardson number.</p>
+<div class="math notranslate nohighlight">
+\[Ri = (g/\theta) * \frac{\left(\partial \theta/\partial z\)}
+{[\left(\partial u / \partial z\right)^2 + \left(\partial v / \partial z\right)^2}\]</div>
+<p>See <a class="reference internal" href="../../references.html#holton2004" id="id1"><span>[Holton2004]</span></a> pg. 121-122. As noted by <a class="reference internal" href="../../references.html#holton2004" id="id2"><span>[Holton2004]</span></a>, flux Richardson
+number values below 0.25 indicate turbulence.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>array-like</em>) – Input data</p></li>
-<li><p><strong>n</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – The number of times values are differenced.</p></li>
-<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – The axis along which the difference is taken, default is the last axis.</p></li>
+<li><p><strong>height</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric height</p></li>
+<li><p><strong>potential_temperature</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric potential temperature</p></li>
+<li><p><strong>u</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – x component of the wind</p></li>
+<li><p><strong>v</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – y component of the wind</p></li>
+<li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – The axis corresponding to vertical, defaults to 0.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>diff</strong> (<em>ndarray</em>) – The n-th differences. The shape of the output is the same as <em class="xref py py-obj">a</em>
-except along <em class="xref py py-obj">axis</em> where the dimension is smaller by <em class="xref py py-obj">n</em>. The
-type of the output is the same as that of the input.</p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> – Gradient Richardson number</p>
 </dd>
 </dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.diff.html#numpy.diff" title="(in NumPy v1.17)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.diff()</span></code></a></p>
-</div>
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -265,10 +276,10 @@ type of the output is the same as that of the input.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="metpy.units.masked_array.html" class="btn btn-neutral float-right" title="masked_array" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="metpy.calc.tke.html" class="btn btn-neutral float-right" title="tke" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="metpy.units.concatenate.html" class="btn btn-neutral" title="concatenate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="metpy.calc.friction_velocity.html" class="btn btn-neutral" title="friction_velocity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -278,7 +289,7 @@ type of the output is the same as that of the input.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2019, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
-      Last updated on Jan 16, 2020 at 01:31:16.
+      Last updated on Aug 10, 2020 at 03:12:47.
 
     </p>
   </div>
@@ -294,9 +305,6 @@ type of the output is the same as that of the input.</p>
   ga('send', 'pageview');
 </script>
 <script>var version_json_loc = "../../../versions.json";</script>
-<p>Do you enjoy using MetPy?
-  <a href="https://saythanks.io/to/unidata" class="btn btn-neutral" title="Say Thanks!" accesskey="n">Say Thanks!</a>
-</p>
 
 
 </footer>
@@ -315,7 +323,7 @@ type of the output is the same as that of the input.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'1.0.0rc1',
+            VERSION:'1.0.0rc1.post217+g06dd809',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -328,7 +336,7 @@ type of the output is the same as that of the input.</p>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/language_data.js"></script>
       <script type="text/javascript" src="../../_static/pop_ver.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

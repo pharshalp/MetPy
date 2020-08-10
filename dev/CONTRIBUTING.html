@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contributors Guide &mdash; MetPy 1.0</title>
+  <title>Contributors Guide &mdash; MetPy 1.0.0rc1</title>
   
 
   
@@ -34,16 +34,20 @@
   
 
   
+    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+  
     <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
   
-    <link rel="stylesheet" href="_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="_static/gallery-binder.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/gallery-dataframe.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="MetPy 1.0" href="index.html"/>
+    <link rel="top" title="MetPy 1.0.0rc1" href="index.html"/>
         <link rel="next" title="Infrastructure Guide" href="infrastructureguide.html"/>
         <link rel="prev" title="Support" href="SUPPORT.html"/> 
 
@@ -80,7 +84,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>1.0</option>
+                      <option value=''>1.0.0rc1</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -312,10 +316,10 @@ GUI on Windows) in the location you’d like to keep it. We are partial to creat
 <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">metpy</span></code></p></li>
 <li><p>Connect your repository to the upstream (main project).
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">unidata</span> <span class="pre">https://github.com/unidata/metpy.git</span></code></p></li>
-<li><p>Create the development environment by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span></code>. This will install
-all of the packages in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.</p></li>
-<li><p>Activate our new development environment <code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">devel</span></code> on Mac/Linux or
-<code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">devel</span></code> on Windows.</p></li>
+<li><p>Create the development environment by running
+<code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">devel</span> <span class="pre">--file</span> <span class="pre">ci/Current.txt</span> <span class="pre">--file</span> <span class="pre">ci/extra_requirements.txt</span> <span class="pre">--file</span> <span class="pre">ci/test_requirements.txt</span></code>.
+This will install all the necessary packages for development.</p></li>
+<li><p>Activate our new development environment by running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">devel</span></code></p></li>
 <li><p>Make an editable install of MetPy by running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p></li>
 </ul>
 <p>Now you’re all set! You have an environment called <code class="docutils literal notranslate"><span class="pre">devel</span></code> that you can work in. You’ll need
@@ -431,7 +435,6 @@ at the existing tests to get an idea of some of the common patterns.</p>
 <p>Some tests (for matplotlib plotting code) are done as an image comparison, using the
 pytest-mpl plugin. To run these tests, use:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pytest --mpl
-<span class="sb">`</span>
 </pre></div>
 </div>
 <p>When adding new image comparison tests, start by creating the baseline images for the tests:</p>
@@ -481,8 +484,8 @@ What now?</p>
 <h3>Automated Testing<a class="headerlink" href="#automated-testing" title="Permalink to this headline">¶</a></h3>
 <p>First, our army of never sleeping robots will begin a series of automated checks.
 The test suite, documentation, style, and more will be checked on various versions of Python
-with current and legacy packages. Travis CI will run testing on Linux and Mac, Appveyor will
-run tests on Windows. Other services will kick in and check if there is a drop in code coverage
+with current and legacy packages. Travis CI and GitHub Actions will run testing on Linux, and
+Mac, and Windows. Other services will kick in and check if there is a drop in code coverage
 or any style variations that should be corrected. If you see a red mark by a service, something
 failed and clicking the “Details” link will give you more information. We’re happy to help if
 you are stuck.</p>
@@ -557,7 +560,7 @@ importance of writing tested and maintainable software.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2019, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
-      Last updated on Jan 16, 2020 at 01:31:16.
+      Last updated on Aug 10, 2020 at 03:12:47.
 
     </p>
   </div>
@@ -573,9 +576,6 @@ importance of writing tested and maintainable software.</p>
   ga('send', 'pageview');
 </script>
 <script>var version_json_loc = "../versions.json";</script>
-<p>Do you enjoy using MetPy?
-  <a href="https://saythanks.io/to/unidata" class="btn btn-neutral" title="Say Thanks!" accesskey="n">Say Thanks!</a>
-</p>
 
 
 </footer>
@@ -594,7 +594,7 @@ importance of writing tested and maintainable software.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0.0rc1',
+            VERSION:'1.0.0rc1.post217+g06dd809',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -607,7 +607,7 @@ importance of writing tested and maintainable software.</p>
       <script type="text/javascript" src="_static/doctools.js"></script>
       <script type="text/javascript" src="_static/language_data.js"></script>
       <script type="text/javascript" src="_static/pop_ver.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

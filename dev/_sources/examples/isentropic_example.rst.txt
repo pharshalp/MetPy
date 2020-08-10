@@ -1,10 +1,12 @@
-.. note::
-    :class: sphx-glr-download-link-note
+.. only:: html
 
-    Click :ref:`here <sphx_glr_download_examples_isentropic_example.py>` to download the full example code
-.. rst-class:: sphx-glr-example-title
+    .. note::
+        :class: sphx-glr-download-link-note
 
-.. _sphx_glr_examples_isentropic_example.py:
+        Click :ref:`here <sphx_glr_download_examples_isentropic_example.py>`     to download the full example code
+    .. rst-class:: sphx-glr-example-title
+
+    .. _sphx_glr_examples_isentropic_example.py:
 
 
 ===================
@@ -150,7 +152,7 @@ and v wind components) will be linearly interpolated to isentropic space.
 
  .. code-block:: none
 
-    /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/metpy/interpolate/one_dimension.py:147: UserWarning: Interpolation point out of data bounds encountered
+    /opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/metpy/interpolate/one_dimension.py:147: UserWarning: Interpolation point out of data bounds encountered
       warnings.warn('Interpolation point out of data bounds encountered')
 
 
@@ -276,6 +278,7 @@ have to be calculated after the interpolation to isentropic space.
 
 
 .. image:: /examples/images/sphx_glr_isentropic_example_001.png
+    :alt: 296 K Isentropic Pressure (hPa), Wind (kt), Relative Humidity (percent)
     :class: sphx-glr-single-img
 
 
@@ -285,12 +288,8 @@ have to be calculated after the interpolation to isentropic space.
 
  .. code-block:: none
 
-    /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/cartopy/vector_transform.py:140: RuntimeWarning: invalid value encountered in less
-      u, v = target_proj.transform_vectors(src_crs, x, y, u, v)
-    /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/cartopy/vector_transform.py:140: RuntimeWarning: invalid value encountered in greater
-      u, v = target_proj.transform_vectors(src_crs, x, y, u, v)
-    /home/travis/build/Unidata/MetPy/examples/isentropic_example.py:148: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all axes decorations. 
-      fig.tight_layout()
+    /home/runner/work/MetPy/MetPy/examples/isentropic_example.py:135: MatplotlibDeprecationWarning: The 'extend' parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+      cb = fig.colorbar(cf, orientation='horizontal', extend='max', aspect=65, shrink=0.5, pad=0.05,
 
 
 
@@ -349,6 +348,7 @@ calculated with `mpcalc.montgomery_streamfunction`.
 
 
 .. image:: /examples/images/sphx_glr_isentropic_example_002.png
+    :alt: 296 K Montgomery Streamfunction ($10^{-2} m^2 s^{-2}$), Wind (kt), Relative Humidity (percent)
     :class: sphx-glr-single-img
 
 
@@ -358,8 +358,8 @@ calculated with `mpcalc.montgomery_streamfunction`.
 
  .. code-block:: none
 
-    /home/travis/build/Unidata/MetPy/examples/isentropic_example.py:195: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all axes decorations. 
-      fig.tight_layout()
+    /home/runner/work/MetPy/MetPy/examples/isentropic_example.py:181: MatplotlibDeprecationWarning: The 'extend' parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+      cb = fig.colorbar(cf, orientation='horizontal', extend='max', aspect=65, shrink=0.5, pad=0.05,
 
 
 
@@ -367,7 +367,7 @@ calculated with `mpcalc.montgomery_streamfunction`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.134 seconds)
+   **Total running time of the script:** ( 0 minutes  13.129 seconds)
 
 
 .. _sphx_glr_download_examples_isentropic_example.py:
@@ -380,13 +380,13 @@ calculated with `mpcalc.montgomery_streamfunction`.
 
 
 
-  .. container:: sphx-glr-download
+  .. container:: sphx-glr-download sphx-glr-download-python
 
      :download:`Download Python source code: isentropic_example.py <isentropic_example.py>`
 
 
 
-  .. container:: sphx-glr-download
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
 
      :download:`Download Jupyter notebook: isentropic_example.ipynb <isentropic_example.ipynb>`
 

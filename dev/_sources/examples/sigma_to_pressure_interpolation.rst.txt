@@ -1,10 +1,12 @@
-.. note::
-    :class: sphx-glr-download-link-note
+.. only:: html
 
-    Click :ref:`here <sphx_glr_download_examples_sigma_to_pressure_interpolation.py>` to download the full example code
-.. rst-class:: sphx-glr-example-title
+    .. note::
+        :class: sphx-glr-download-link-note
 
-.. _sphx_glr_examples_sigma_to_pressure_interpolation.py:
+        Click :ref:`here <sphx_glr_download_examples_sigma_to_pressure_interpolation.py>`     to download the full example code
+    .. rst-class:: sphx-glr-example-title
+
+    .. _sphx_glr_examples_sigma_to_pressure_interpolation.py:
 
 
 ===============================
@@ -59,6 +61,15 @@ University Department of Geography and Meteorology.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/MetPy/MetPy/examples/sigma_to_pressure_interpolation.py:35: DeprecationWarning: tostring() is deprecated. Use tobytes() instead.
+      vtimes = num2date(time[:], time.units)
+
 
 
 
@@ -101,7 +112,7 @@ variable for plotting.
 
  .. code-block:: none
 
-    /home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/metpy/interpolate/one_dimension.py:137: UserWarning: Interpolation point out of data bounds encountered
+    /opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/metpy/interpolate/one_dimension.py:137: UserWarning: Interpolation point out of data bounds encountered
       warnings.warn('Interpolation point out of data bounds encountered')
 
 
@@ -156,8 +167,18 @@ variable for plotting.
 
 
 .. image:: /examples/images/sphx_glr_sigma_to_pressure_interpolation_001.png
+    :alt: WRF-ARW Forecast VALID: 1980-06-03 13:00:00 UTC, 700 hPa Heights (m) and Temperature (C)
     :class: sphx-glr-single-img
 
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/runner/work/MetPy/MetPy/examples/sigma_to_pressure_interpolation.py:83: MatplotlibDeprecationWarning: The 'extend' parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+      cb = fig.colorbar(cf, orientation='horizontal', extend='max', aspect=65, shrink=0.5,
 
 
 
@@ -165,7 +186,7 @@ variable for plotting.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.922 seconds)
+   **Total running time of the script:** ( 0 minutes  9.268 seconds)
 
 
 .. _sphx_glr_download_examples_sigma_to_pressure_interpolation.py:
@@ -178,13 +199,13 @@ variable for plotting.
 
 
 
-  .. container:: sphx-glr-download
+  .. container:: sphx-glr-download sphx-glr-download-python
 
      :download:`Download Python source code: sigma_to_pressure_interpolation.py <sigma_to_pressure_interpolation.py>`
 
 
 
-  .. container:: sphx-glr-download
+  .. container:: sphx-glr-download sphx-glr-download-jupyter
 
      :download:`Download Jupyter notebook: sigma_to_pressure_interpolation.ipynb <sigma_to_pressure_interpolation.ipynb>`
 

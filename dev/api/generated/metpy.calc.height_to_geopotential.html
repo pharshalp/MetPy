@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>height_to_geopotential &mdash; MetPy 1.0</title>
+  <title>height_to_geopotential &mdash; MetPy 1.0.0rc1</title>
   
 
   
@@ -34,16 +34,20 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
   
-    <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 1.0" href="../../index.html"/>
+    <link rel="top" title="MetPy 1.0.0rc1" href="../../index.html"/>
         <link rel="up" title="calc" href="metpy.calc.html"/>
         <link rel="next" title="mean_pressure_weighted" href="metpy.calc.mean_pressure_weighted.html"/>
         <link rel="prev" title="geopotential_to_height" href="metpy.calc.geopotential_to_height.html"/> 
@@ -81,7 +85,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>1.0</option>
+                      <option value=''>1.0.0rc1</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -127,7 +131,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="metpy.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.units.html">units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metpy.io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.io.html">metpy.io</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="metpy.calc.html">calc</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="metpy.calc.html#dry-thermodynamics">Dry Thermodynamics</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="metpy.calc.add_height_to_pressure.html">add_height_to_pressure</a></li>
@@ -242,9 +246,9 @@
             
   <div class="section" id="height-to-geopotential">
 <h1>height_to_geopotential<a class="headerlink" href="#height-to-geopotential" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="metpy.calc.height_to_geopotential">
-<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">height_to_geopotential</code><span class="sig-paren">(</span><em class="sig-param">height</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/basic.html#height_to_geopotential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.height_to_geopotential" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">height_to_geopotential</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/basic.html#height_to_geopotential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.height_to_geopotential" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute geopotential for a given height above sea level.</p>
 <p>Calculates the geopotential from height above mean sea level using the following formula,
 which is derived from the definition of geopotential as given in <a class="reference internal" href="../../references.html#hobbs2006" id="id1"><span>[Hobbs2006]</span></a> Pg. 69 Eq
@@ -312,7 +316,7 @@ Gravitation assuming a spherical Earth and no centrifugal force effects.)</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2019, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
-      Last updated on Jan 16, 2020 at 01:31:16.
+      Last updated on Aug 10, 2020 at 03:12:47.
 
     </p>
   </div>
@@ -328,9 +332,6 @@ Gravitation assuming a spherical Earth and no centrifugal force effects.)</p>
   ga('send', 'pageview');
 </script>
 <script>var version_json_loc = "../../../versions.json";</script>
-<p>Do you enjoy using MetPy?
-  <a href="https://saythanks.io/to/unidata" class="btn btn-neutral" title="Say Thanks!" accesskey="n">Say Thanks!</a>
-</p>
 
 
 </footer>
@@ -349,7 +350,7 @@ Gravitation assuming a spherical Earth and no centrifugal force effects.)</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'1.0.0rc1',
+            VERSION:'1.0.0rc1.post217+g06dd809',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -362,7 +363,7 @@ Gravitation assuming a spherical Earth and no centrifugal force effects.)</p>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/language_data.js"></script>
       <script type="text/javascript" src="../../_static/pop_ver.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

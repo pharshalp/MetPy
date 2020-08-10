@@ -75,6 +75,7 @@ Soundings
       el
       lcl
       lfc
+      lifted_index
       mixed_layer
       mixed_layer_cape_cin
       mixed_parcel
@@ -128,6 +129,7 @@ Boundary Layer/Turbulence
       brunt_vaisala_frequency_squared
       brunt_vaisala_period
       friction_velocity
+      gradient_richardson_number
       tke
 
 
@@ -188,6 +190,7 @@ Other
       :toctree: ./
 
       angle_to_direction
+      azimuth_range_to_lat_lon
       find_bounding_indices
       find_intersections
       get_layer
@@ -198,5 +201,4 @@ Other
       parse_angle
       reduce_point_density
       resample_nn_1d
-
 

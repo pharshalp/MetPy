@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>geodesic &mdash; MetPy 1.0</title>
+  <title>geodesic &mdash; MetPy 1.0.0rc1</title>
   
 
   
@@ -34,16 +34,20 @@
   
 
   
+    <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+  
     <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
   
-    <link rel="stylesheet" href="../../_static/theme_override.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
   
 
   
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 1.0" href="../../index.html"/>
+    <link rel="top" title="MetPy 1.0.0rc1" href="../../index.html"/>
         <link rel="up" title="interpolate" href="metpy.interpolate.html"/>
         <link rel="next" title="interpolate_1d" href="metpy.interpolate.interpolate_1d.html"/>
         <link rel="prev" title="cross_section" href="metpy.interpolate.cross_section.html"/> 
@@ -81,7 +85,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>1.0</option>
+                      <option value=''>1.0.0rc1</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -127,7 +131,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Reference Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="metpy.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.units.html">units</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metpy.io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.io.html">metpy.io</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.html">calc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.html">plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.ctables.html">ctables</a></li>
@@ -233,9 +237,9 @@
             
   <div class="section" id="geodesic">
 <h1>geodesic<a class="headerlink" href="#geodesic" title="Permalink to this headline">¶</a></h1>
-<dl class="function">
+<dl class="py function">
 <dt id="metpy.interpolate.geodesic">
-<code class="sig-prename descclassname">metpy.interpolate.</code><code class="sig-name descname">geodesic</code><span class="sig-paren">(</span><em class="sig-param">crs</em>, <em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">steps</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/interpolate/slices.html#geodesic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.interpolate.geodesic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">metpy.interpolate.</code><code class="sig-name descname">geodesic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">crs</span></em>, <em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">steps</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/interpolate/slices.html#geodesic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.interpolate.geodesic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a geodesic path between two points.</p>
 <p>This function acts as a wrapper for the geodesic construction available in <code class="xref py py-obj docutils literal notranslate"><span class="pre">pyproj</span></code>.</p>
 <dl class="field-list simple">
@@ -251,7 +255,7 @@ north and degrees east).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> – The list of x, y points in the given CRS of length <em class="xref py py-obj">steps</em> along the geodesic.</p>
+<dd class="field-even"><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.19)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> – The list of x, y points in the given CRS of length <em class="xref py py-obj">steps</em> along the geodesic.</p>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -285,7 +289,7 @@ north and degrees east).</p></li>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2019, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
-      Last updated on Jan 16, 2020 at 01:31:16.
+      Last updated on Aug 10, 2020 at 03:12:47.
 
     </p>
   </div>
@@ -301,9 +305,6 @@ north and degrees east).</p></li>
   ga('send', 'pageview');
 </script>
 <script>var version_json_loc = "../../../versions.json";</script>
-<p>Do you enjoy using MetPy?
-  <a href="https://saythanks.io/to/unidata" class="btn btn-neutral" title="Say Thanks!" accesskey="n">Say Thanks!</a>
-</p>
 
 
 </footer>
@@ -322,7 +323,7 @@ north and degrees east).</p></li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'1.0.0rc1',
+            VERSION:'1.0.0rc1.post217+g06dd809',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -335,7 +336,7 @@ north and degrees east).</p></li>
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="../../_static/language_data.js"></script>
       <script type="text/javascript" src="../../_static/pop_ver.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 
