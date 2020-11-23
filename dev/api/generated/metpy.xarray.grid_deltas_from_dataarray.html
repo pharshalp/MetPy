@@ -17,7 +17,7 @@
   
   
   
-    <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.grid_deltas_from_dataarray.html"/>
+    <link rel="canonical" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.xarray.grid_deltas_from_dataarray.html"/>
   
 
   
@@ -48,9 +48,9 @@
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="MetPy 1.0.0rc1" href="../../index.html"/>
-        <link rel="up" title="calc" href="metpy.calc.html"/>
-        <link rel="next" title="laplacian" href="metpy.calc.laplacian.html"/>
-        <link rel="prev" title="gradient" href="metpy.calc.gradient.html"/> 
+        <link rel="up" title="xarray" href="metpy.xarray.html"/>
+        <link rel="next" title="MetPy Roadmap" href="../../roadmap.html"/>
+        <link rel="prev" title="xarray" href="metpy.xarray.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -132,35 +132,18 @@
 <li class="toctree-l2"><a class="reference internal" href="metpy.constants.html">constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.units.html">units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.io.html">metpy.io</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="metpy.calc.html">calc</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#dry-thermodynamics">Dry Thermodynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#moist-thermodynamics">Moist Thermodynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#soundings">Soundings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#dynamic-kinematic">Dynamic/Kinematic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#boundary-layer-turbulence">Boundary Layer/Turbulence</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="metpy.calc.html#mathematical-functions">Mathematical Functions</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.cross_section_components.html">cross_section_components</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.first_derivative.html">first_derivative</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.gradient.html">gradient</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">grid_deltas_from_dataarray</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.laplacian.html">laplacian</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.lat_lon_grid_deltas.html">lat_lon_grid_deltas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.normal_component.html">normal_component</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.second_derivative.html">second_derivative</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.tangential_component.html">tangential_component</a></li>
-<li class="toctree-l4"><a class="reference internal" href="metpy.calc.unit_vectors_from_cross_section.html">unit_vectors_from_cross_section</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#apparent-temperature">Apparent Temperature</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#standard-atmosphere">Standard Atmosphere</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#smoothing">Smoothing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="metpy.calc.html#other">Other</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.calc.html">calc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.html">plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.ctables.html">ctables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.interpolate.html">interpolate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="metpy.xarray.html">xarray</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="metpy.xarray.html">xarray</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="metpy.xarray.html#accessors">Accessors</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="metpy.xarray.html#functions">Functions</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">grid_deltas_from_dataarray</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">MetPy Roadmap</a></li>
@@ -217,7 +200,7 @@
         
           <li><a href="../index.html">Reference Guide</a> &raquo;</li>
         
-          <li><a href="metpy.calc.html">calc</a> &raquo;</li>
+          <li><a href="metpy.xarray.html">xarray</a> &raquo;</li>
         
       <li>grid_deltas_from_dataarray</li>
     
@@ -227,7 +210,7 @@
             
                 
                 
-                <a href="https://github.com/Unidata/MetPy/issues/new?title=Suggested%20improvement%20for%20api/generated/metpy.calc.grid_deltas_from_dataarray&body=Please%20describe%20what%20could%20be%20improved%20about%20this%20page%20or%20the%20typo/mistake%20that%20you%20found%3A"
+                <a href="https://github.com/Unidata/MetPy/issues/new?title=Suggested%20improvement%20for%20api/generated/metpy.xarray.grid_deltas_from_dataarray&body=Please%20describe%20what%20could%20be%20improved%20about%20this%20page%20or%20the%20typo/mistake%20that%20you%20found%3A"
                    class="fa fa-github"> Improve this page</a>
             
         
@@ -244,17 +227,17 @@
   <div class="section" id="grid-deltas-from-dataarray">
 <h1>grid_deltas_from_dataarray<a class="headerlink" href="#grid-deltas-from-dataarray" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="metpy.calc.grid_deltas_from_dataarray">
-<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">grid_deltas_from_dataarray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">kind</span><span class="o">=</span><span class="default_value">'default'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/tools.html#grid_deltas_from_dataarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.grid_deltas_from_dataarray" title="Permalink to this definition">¶</a></dt>
+<dt id="metpy.xarray.grid_deltas_from_dataarray">
+<code class="sig-prename descclassname">metpy.xarray.</code><code class="sig-name descname">grid_deltas_from_dataarray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">kind</span><span class="o">=</span><span class="default_value">'default'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/xarray.html#grid_deltas_from_dataarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.xarray.grid_deltas_from_dataarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the horizontal deltas between grid points of a DataArray.</p>
 <p>Calculate the signed delta distance between grid points of a DataArray in the horizontal
 directions, using actual (real distance) or nominal (in projection space) deltas.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>f</strong> (<a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.15.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>) – Parsed DataArray (MetPy’s crs coordinate must be available for kind=”actual”)</p></li>
-<li><p><strong>kind</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Type of grid delta to calculate. “actual” returns true distances as calculated from
-longitude and latitude via <a class="reference internal" href="metpy.calc.lat_lon_grid_deltas.html#metpy.calc.lat_lon_grid_deltas" title="metpy.calc.lat_lon_grid_deltas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lat_lon_grid_deltas</span></code></a>. “nominal” returns horizontal
+<li><p><strong>f</strong> (<a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.2.dev3)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>) – Parsed DataArray (MetPy’s crs coordinate must be available for kind=”actual”)</p></li>
+<li><p><strong>kind</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Type of grid delta to calculate. “actual” returns true distances as calculated from
+longitude and latitude via <em class="xref py py-obj">lat_lon_grid_deltas</em>. “nominal” returns horizontal
 differences in the data’s coordinate space, either in degrees (for lat/lon CRS) or
 meters (for y/x CRS). “default” behaves like “actual” for datasets with a lat/lon CRS
 and like “nominal” for all others. Defaults to “default”.</p></li>
@@ -267,18 +250,11 @@ matching those of <em class="xref py py-obj">f</em>.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="metpy.calc.lat_lon_grid_deltas.html#metpy.calc.lat_lon_grid_deltas" title="metpy.calc.lat_lon_grid_deltas"><code class="xref py py-func docutils literal notranslate"><span class="pre">lat_lon_grid_deltas()</span></code></a></p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">lat_lon_grid_deltas</span></code></p>
 </div>
 </dd></dl>
 
-<div class="section" id="examples-using-metpy-calc-grid-deltas-from-dataarray">
-<h2>Examples using <code class="docutils literal notranslate"><span class="pre">metpy.calc.grid_deltas_from_dataarray</span></code><a class="headerlink" href="#examples-using-metpy-calc-grid-deltas-from-dataarray" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="`xarray &lt;http://xarray.pydata.org/&gt;`_ is a powerful Python package that provides N-dimensional ..."><div class="figure align-default" id="id1">
-<img alt="xarray with MetPy Tutorial" src="../../_images/sphx_glr_xarray_tutorial_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="../../tutorials/xarray_tutorial.html#sphx-glr-tutorials-xarray-tutorial-py"><span class="std std-ref">xarray with MetPy Tutorial</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-</div><div style='clear:both'></div></div>
-</div>
+<div style='clear:both'></div></div>
 
 
            </div>
@@ -290,10 +266,10 @@ matching those of <em class="xref py py-obj">f</em>.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="metpy.calc.laplacian.html" class="btn btn-neutral float-right" title="laplacian" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../roadmap.html" class="btn btn-neutral float-right" title="MetPy Roadmap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="metpy.calc.gradient.html" class="btn btn-neutral" title="gradient" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="metpy.xarray.html" class="btn btn-neutral" title="xarray" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -302,8 +278,8 @@ matching those of <em class="xref py py-obj">f</em>.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
-      Last updated on Sep 09, 2020 at 06:06:18.
+        &copy; Copyright 2008-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712..
+      Last updated on Nov 23, 2020 at 21:04:16.
 
     </p>
   </div>
@@ -337,7 +313,7 @@ matching those of <em class="xref py py-obj">f</em>.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'1.0.0rc1.post266+g1f3ac69',
+            VERSION:'1.0.0rc1.post450+g1f182af',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
