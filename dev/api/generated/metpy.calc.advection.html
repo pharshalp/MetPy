@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -748,10 +747,10 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>scalar</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>) – Array (with N-dimensions) with the quantity to be advected. Use <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> to
+<li><p><strong>scalar</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>) – Array (with N-dimensions) with the quantity to be advected. Use <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> to
 have dimension ordering automatically determined, otherwise, use default
 […, Z, Y, X] ordering or specify *_dim keyword arguments.</p></li>
-<li><p><strong>u</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> or None) – N-dimensional arrays with units of velocity representing the flow, with a component of
+<li><p><strong>u</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> or None) – N-dimensional arrays with units of velocity representing the flow, with a component of
 the wind in each dimension. For 1D advection, use 1 positional argument (with <em class="xref py py-obj">dx</em> for
 grid spacing and <em class="xref py py-obj">x_dim</em> to specify axis if not the default of -1) or use 1 applicable
 keyword argument (u, v, or w) for proper physical dimension (with corresponding <em class="xref py py-obj">d*</em>
@@ -762,7 +761,7 @@ and v as keyword arguments (grid spacings and axes likewise). For 3D advection,
 likewise use 3 positional arguments in order for u, v, and w winds respectively or
 specify u, v, and w as keyword arguments (either way, with <em class="xref py py-obj">dx</em>, <em class="xref py py-obj">dy</em>, <em class="xref py py-obj">dz</em> for grid
 spacings and <em class="xref py py-obj">x_dim</em>, <em class="xref py py-obj">y_dim</em>, and <em class="xref py py-obj">vertical_dim</em> for axes).</p></li>
-<li><p><strong>v</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> or None) – N-dimensional arrays with units of velocity representing the flow, with a component of
+<li><p><strong>v</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> or None) – N-dimensional arrays with units of velocity representing the flow, with a component of
 the wind in each dimension. For 1D advection, use 1 positional argument (with <em class="xref py py-obj">dx</em> for
 grid spacing and <em class="xref py py-obj">x_dim</em> to specify axis if not the default of -1) or use 1 applicable
 keyword argument (u, v, or w) for proper physical dimension (with corresponding <em class="xref py py-obj">d*</em>
@@ -773,7 +772,7 @@ and v as keyword arguments (grid spacings and axes likewise). For 3D advection,
 likewise use 3 positional arguments in order for u, v, and w winds respectively or
 specify u, v, and w as keyword arguments (either way, with <em class="xref py py-obj">dx</em>, <em class="xref py py-obj">dy</em>, <em class="xref py py-obj">dz</em> for grid
 spacings and <em class="xref py py-obj">x_dim</em>, <em class="xref py py-obj">y_dim</em>, and <em class="xref py py-obj">vertical_dim</em> for axes).</p></li>
-<li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> or None) – N-dimensional arrays with units of velocity representing the flow, with a component of
+<li><p><strong>w</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> or None) – N-dimensional arrays with units of velocity representing the flow, with a component of
 the wind in each dimension. For 1D advection, use 1 positional argument (with <em class="xref py py-obj">dx</em> for
 grid spacing and <em class="xref py py-obj">x_dim</em> to specify axis if not the default of -1) or use 1 applicable
 keyword argument (u, v, or w) for proper physical dimension (with corresponding <em class="xref py py-obj">d*</em>
@@ -784,20 +783,20 @@ and v as keyword arguments (grid spacings and axes likewise). For 3D advection,
 likewise use 3 positional arguments in order for u, v, and w winds respectively or
 specify u, v, and w as keyword arguments (either way, with <em class="xref py py-obj">dx</em>, <em class="xref py py-obj">dy</em>, <em class="xref py py-obj">dz</em> for grid
 spacings and <em class="xref py py-obj">x_dim</em>, <em class="xref py py-obj">y_dim</em>, and <em class="xref py py-obj">vertical_dim</em> for axes).</p></li>
-<li><p><strong>dx</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or None, optional) – Grid spacing in applicable dimension(s). If using arrays, each array should have one
+<li><p><strong>dx</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or None, optional) – Grid spacing in applicable dimension(s). If using arrays, each array should have one
 item less than the size of <em class="xref py py-obj">scalar</em> along the applicable axis. If <em class="xref py py-obj">scalar</em> is an
 <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>, these are automatically determined from its coordinates, and are
-therefore optional. Required if <em class="xref py py-obj">scalar</em> is a <code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>. These are keyword-only
+therefore optional. Required if <em class="xref py py-obj">scalar</em> is a <a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>. These are keyword-only
 arguments.</p></li>
-<li><p><strong>dy</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or None, optional) – Grid spacing in applicable dimension(s). If using arrays, each array should have one
+<li><p><strong>dy</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or None, optional) – Grid spacing in applicable dimension(s). If using arrays, each array should have one
 item less than the size of <em class="xref py py-obj">scalar</em> along the applicable axis. If <em class="xref py py-obj">scalar</em> is an
 <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>, these are automatically determined from its coordinates, and are
-therefore optional. Required if <em class="xref py py-obj">scalar</em> is a <code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>. These are keyword-only
+therefore optional. Required if <em class="xref py py-obj">scalar</em> is a <a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>. These are keyword-only
 arguments.</p></li>
-<li><p><strong>dz</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or None, optional) – Grid spacing in applicable dimension(s). If using arrays, each array should have one
+<li><p><strong>dz</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or None, optional) – Grid spacing in applicable dimension(s). If using arrays, each array should have one
 item less than the size of <em class="xref py py-obj">scalar</em> along the applicable axis. If <em class="xref py py-obj">scalar</em> is an
 <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>, these are automatically determined from its coordinates, and are
-therefore optional. Required if <em class="xref py py-obj">scalar</em> is a <code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>. These are keyword-only
+therefore optional. Required if <em class="xref py py-obj">scalar</em> is a <a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>. These are keyword-only
 arguments.</p></li>
 <li><p><strong>x_dim</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>, </em><em>optional</em>) – Axis number in applicable dimension(s). Defaults to -1, -2, and -3 respectively for
 (…, Z, Y, X) dimension ordering. If <em class="xref py py-obj">scalar</em> is an <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>, these are
@@ -811,9 +810,12 @@ automatically determined from its coordinates. These are keyword-only arguments.
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> – An N-dimensional array containing the advection at all grid points.</p>
+<dd class="field-even"><p><a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> – An N-dimensional array containing the advection at all grid points.</p>
 </dd>
 </dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Changed signature from <code class="docutils literal notranslate"><span class="pre">(scalar,</span> <span class="pre">wind,</span> <span class="pre">deltas)</span></code></p>
+</div>
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -853,8 +855,8 @@ automatically determined from its coordinates. These are keyword-only arguments.
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

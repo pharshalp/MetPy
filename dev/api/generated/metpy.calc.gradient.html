@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -756,7 +755,7 @@
 <p>Either <em class="xref py py-obj">coordinates</em> or <em class="xref py py-obj">deltas</em> must be specified, or <em class="xref py py-obj">f</em> must be given as an
 <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> with  attached coordinate and projection information. If <em class="xref py py-obj">f</em> is an
 <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>, and <em class="xref py py-obj">coordinates</em> or <em class="xref py py-obj">deltas</em> are given, <em class="xref py py-obj">f</em> will be converted to a
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> and the gradient returned as a tuple of <code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>, otherwise, if
+<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> and the gradient returned as a tuple of <a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>, otherwise, if
 neither <em class="xref py py-obj">coordinates</em> nor <em class="xref py py-obj">deltas</em> are given, the attached coordinate information belonging
 to <em class="xref py py-obj">axis</em> will be used and the gradient will be returned as a tuple of <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>.</p>
 <dl class="field-list simple">
@@ -764,7 +763,7 @@ to <em class="xref py py-obj">axis</em> will be used and the gradient will be re
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>f</strong> (<em>array-like</em>) – Array of values of which to calculate the derivative</p></li>
 <li><p><strong>axes</strong> (<em>sequence</em><em>, </em><em>optional</em>) – Sequence of strings (if <em class="xref py py-obj">f</em> is a <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> and implicit conversion to
-<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> is not used) or integers that specify the array axes along which to
+<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> is not used) or integers that specify the array axes along which to
 take the derivatives. Defaults to all axes of <em class="xref py py-obj">f</em>. If given, and used with
 <em class="xref py py-obj">coordinates</em> or <em class="xref py py-obj">deltas</em>, its length must be less than or equal to that of the
 <em class="xref py py-obj">coordinates</em> or <em class="xref py py-obj">deltas</em> given. In general, each axis can be an axis number
@@ -781,13 +780,16 @@ axis.</p></li>
 <dd class="field-even"><p><em>tuple of array-like</em> – The first derivative calculated along each specified axis of the original array</p>
 </dd>
 </dl>
+<p class="rubric">Notes</p>
+<p>If this function is used without the <em class="xref py py-obj">axes</em> parameter, the length of <em class="xref py py-obj">coordinates</em> or
+<em class="xref py py-obj">deltas</em> (as applicable) should match the number of dimensions of <em class="xref py py-obj">f</em>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Changed signature from <code class="docutils literal notranslate"><span class="pre">(f,</span> <span class="pre">**kwargs)</span></code></p>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="metpy.calc.laplacian.html#metpy.calc.laplacian" title="metpy.calc.laplacian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">laplacian</span></code></a>, <a class="reference internal" href="metpy.calc.first_derivative.html#metpy.calc.first_derivative" title="metpy.calc.first_derivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">first_derivative</span></code></a></p>
 </div>
-<p class="rubric">Notes</p>
-<p>If this function is used without the <em class="xref py py-obj">axes</em> parameter, the length of <em class="xref py py-obj">coordinates</em> or
-<em class="xref py py-obj">deltas</em> (as applicable) should match the number of dimensions of <em class="xref py py-obj">f</em>.</p>
 </dd></dl>
 
 <div class="section" id="examples-using-metpy-calc-gradient">
@@ -834,8 +836,8 @@ axis.</p></li>
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

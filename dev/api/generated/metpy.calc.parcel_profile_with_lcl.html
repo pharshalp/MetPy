@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -752,20 +751,20 @@ a profile that includes the LCL.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pressure</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric pressure level(s) of interest. This array must be from
+<li><p><strong>pressure</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric pressure level(s) of interest. This array must be from
 high to low pressure.</p></li>
-<li><p><strong>temperature</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric temperature at the levels in <em class="xref py py-obj">pressure</em>. The first entry should be at
+<li><p><strong>temperature</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric temperature at the levels in <em class="xref py py-obj">pressure</em>. The first entry should be at
 the same level as the first <em class="xref py py-obj">pressure</em> data point.</p></li>
-<li><p><strong>dewpoint</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric dewpoint at the levels in <em class="xref py py-obj">pressure</em>. The first entry should be at
+<li><p><strong>dewpoint</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric dewpoint at the levels in <em class="xref py py-obj">pressure</em>. The first entry should be at
 the same level as the first <em class="xref py py-obj">pressure</em> data point.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><strong>pressure</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – The parcel profile pressures, which includes the specified levels and the LCL</p></li>
-<li><p><strong>ambient_temperature</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric temperature values, including the value interpolated to the LCL level</p></li>
-<li><p><strong>ambient_dew_point</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric dewpoint values, including the value interpolated to the LCL level</p></li>
-<li><p><strong>profile_temperature</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – The parcel profile temperatures at all of the levels in the returned pressures array,
+<li><p><strong>pressure</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – The parcel profile pressures, which includes the specified levels and the LCL</p></li>
+<li><p><strong>ambient_temperature</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric temperature values, including the value interpolated to the LCL level</p></li>
+<li><p><strong>ambient_dew_point</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric dewpoint values, including the value interpolated to the LCL level</p></li>
+<li><p><strong>profile_temperature</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – The parcel profile temperatures at all of the levels in the returned pressures array,
 including the LCL</p></li>
 </ul>
 </p>
@@ -779,6 +778,9 @@ including the LCL</p></li>
 <p>Only functions on 1D profiles (not higher-dimension vertical cross sections or grids).
 Also, will only return Pint Quantities, even when given xarray DataArray profiles. To
 obtain a xarray Dataset instead, use <a class="reference internal" href="metpy.calc.parcel_profile_with_lcl_as_dataset.html#metpy.calc.parcel_profile_with_lcl_as_dataset" title="metpy.calc.parcel_profile_with_lcl_as_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parcel_profile_with_lcl_as_dataset</span></code></a> instead.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Renamed <code class="docutils literal notranslate"><span class="pre">dewpt</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">dewpoint</span></code></p>
+</div>
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -818,8 +820,8 @@ obtain a xarray Dataset instead, use <a class="reference internal" href="metpy.c
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

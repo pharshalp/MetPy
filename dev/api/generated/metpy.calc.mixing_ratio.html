@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -743,7 +742,7 @@
 <h1>mixing_ratio<a class="headerlink" href="#mixing-ratio" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="metpy.calc.mixing_ratio">
-<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">mixing_ratio</code><span class="sig-paren">(</span><em class="sig-param">partial_press</em>, <em class="sig-param">total_press</em>, <em class="sig-param">molecular_weight_ratio=&lt;Quantity(0.621980086</em>, <em class="sig-param">'dimensionless')&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/thermo.html#mixing_ratio"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.mixing_ratio" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">mixing_ratio</code><span class="sig-paren">(</span><em class="sig-param">partial_press</em>, <em class="sig-param">total_press</em>, <em class="sig-param">molecular_weight_ratio=&lt;Quantity(0.62195691</em>, <em class="sig-param">'dimensionless')&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/thermo.html#mixing_ratio"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.mixing_ratio" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the mixing ratio of a gas.</p>
 <p>This calculates mixing ratio given its partial pressure and the total pressure of
 the air. There are no required units for the input arrays, other than that
@@ -751,15 +750,15 @@ they have the same units.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>partial_press</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Partial pressure of the constituent gas</p></li>
-<li><p><strong>total_press</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Total air pressure</p></li>
-<li><p><strong>molecular_weight_ratio</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or float, optional) – The ratio of the molecular weight of the constituent gas to that assumed
+<li><p><strong>partial_press</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Partial pressure of the constituent gas</p></li>
+<li><p><strong>total_press</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Total air pressure</p></li>
+<li><p><strong>molecular_weight_ratio</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or float, optional) – The ratio of the molecular weight of the constituent gas to that assumed
 for air. Defaults to the ratio for water vapor to dry air
 (<span class="math notranslate nohighlight">\(\epsilon\approx0.622\)</span>).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> – The (mass) mixing ratio, dimensionless (e.g. Kg/Kg or g/g)</p>
+<dd class="field-even"><p><a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> – The (mass) mixing ratio, dimensionless (e.g. Kg/Kg or g/g)</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
@@ -767,6 +766,9 @@ for air. Defaults to the ratio for water vapor to dry air
 such as <a class="reference internal" href="../references.html#hobbs1977" id="id1"><span>[Hobbs1977]</span></a> pg.73:</p>
 <div class="math notranslate nohighlight">
 \[r = \epsilon \frac{e}{p - e}\]</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Renamed <code class="docutils literal notranslate"><span class="pre">part_press</span></code>, <code class="docutils literal notranslate"><span class="pre">tot_press</span></code> parameters to <code class="docutils literal notranslate"><span class="pre">partial_press</span></code>, <code class="docutils literal notranslate"><span class="pre">total_press</span></code></p>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="metpy.calc.saturation_mixing_ratio.html#metpy.calc.saturation_mixing_ratio" title="metpy.calc.saturation_mixing_ratio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturation_mixing_ratio</span></code></a>, <a class="reference internal" href="metpy.calc.vapor_pressure.html#metpy.calc.vapor_pressure" title="metpy.calc.vapor_pressure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vapor_pressure</span></code></a></p>
@@ -810,8 +812,8 @@ such as <a class="reference internal" href="../references.html#hobbs1977" id="id
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

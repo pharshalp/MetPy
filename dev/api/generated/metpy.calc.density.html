@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -743,28 +742,31 @@
 <h1>density<a class="headerlink" href="#density" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="metpy.calc.density">
-<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">density</code><span class="sig-paren">(</span><em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">mixing_ratio</em>, <em class="sig-param">molecular_weight_ratio=&lt;Quantity(0.621980086</em>, <em class="sig-param">'dimensionless')&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/thermo.html#density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.density" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">metpy.calc.</code><code class="sig-name descname">density</code><span class="sig-paren">(</span><em class="sig-param">pressure</em>, <em class="sig-param">temperature</em>, <em class="sig-param">mixing_ratio</em>, <em class="sig-param">molecular_weight_ratio=&lt;Quantity(0.62195691</em>, <em class="sig-param">'dimensionless')&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/calc/thermo.html#density"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.calc.density" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate density.</p>
 <p>This calculation must be given an air parcel’s pressure, temperature, and mixing ratio.
 The implementation uses the formula outlined in <a class="reference internal" href="../references.html#hobbs2006" id="id1"><span>[Hobbs2006]</span></a> pg.67.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pressure</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Total atmospheric pressure</p></li>
-<li><p><strong>temperature</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Air temperature</p></li>
-<li><p><strong>mixing_ratio</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Mass mixing ratio (dimensionless)</p></li>
-<li><p><strong>molecular_weight_ratio</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> or float, optional) – The ratio of the molecular weight of the constituent gas to that assumed
+<li><p><strong>pressure</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Total atmospheric pressure</p></li>
+<li><p><strong>temperature</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Air temperature</p></li>
+<li><p><strong>mixing_ratio</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Mass mixing ratio (dimensionless)</p></li>
+<li><p><strong>molecular_weight_ratio</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> or float, optional) – The ratio of the molecular weight of the constituent gas to that assumed
 for air. Defaults to the ratio for water vapor to dry air.
 (<span class="math notranslate nohighlight">\(\epsilon\approx0.622\)</span>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> – Corresponding density of the parcel</p>
+<dd class="field-even"><p><a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> – Corresponding density of the parcel</p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
 <div class="math notranslate nohighlight">
 \[\rho = \frac{p}{R_dT_v}\]</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Renamed <code class="docutils literal notranslate"><span class="pre">mixing</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">mixing_ratio</span></code></p>
+</div>
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -804,8 +806,8 @@ for air. Defaults to the ratio for water vapor to dry air.
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -748,8 +747,8 @@
 <p>Works for both regularly-spaced data and grids with varying spacing.</p>
 <p>Either <em class="xref py py-obj">x</em> or <em class="xref py py-obj">delta</em> must be specified, or <em class="xref py py-obj">f</em> must be given as an <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a> with
 attached coordinate and projection information. If <em class="xref py py-obj">f</em> is an <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a>, and <em class="xref py py-obj">x</em> or
-<em class="xref py py-obj">delta</em> are given, <em class="xref py py-obj">f</em> will be converted to a <code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> and the derivative returned
-as a <code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>, otherwise, if neither <em class="xref py py-obj">x</em> nor <em class="xref py py-obj">delta</em> are given, the attached
+<em class="xref py py-obj">delta</em> are given, <em class="xref py py-obj">f</em> will be converted to a <a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> and the derivative returned
+as a <a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>, otherwise, if neither <em class="xref py py-obj">x</em> nor <em class="xref py py-obj">delta</em> are given, the attached
 coordinate information belonging to <em class="xref py py-obj">axis</em> will be used and the derivative will be returned
 as an <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.DataArray.html#xarray.DataArray" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></a></p>
 <p>This uses 3 points to calculate the derivative, using forward or backward at the edges of
@@ -762,7 +761,7 @@ explicitly, using the formulation as specified by <a class="reference internal" 
 <li><p><strong>axis</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – The array axis along which to take the derivative. If <em class="xref py py-obj">f</em> is ndarray-like, must be an
 integer. If <em class="xref py py-obj">f</em> is a <em class="xref py py-obj">DataArray</em>, can be a string (referring to either the coordinate
 dimension name or the axis type) or integer (referring to axis number), unless using
-implicit conversion to <code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>, in which case it must be an integer. Defaults
+implicit conversion to <a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>, in which case it must be an integer. Defaults
 to 0. For reference, the current standard axis types are ‘time’, ‘vertical’, ‘y’, and
 ‘x’.</p></li>
 <li><p><strong>x</strong> (<em>array-like</em><em>, </em><em>optional</em>) – The coordinate values corresponding to the grid points in <em class="xref py py-obj">f</em></p></li>
@@ -774,6 +773,9 @@ of <em class="xref py py-obj">f</em> along <em class="xref py py-obj">axis</em>.
 <dd class="field-even"><p><em>array-like</em> – The second derivative calculated along the selected axis</p>
 </dd>
 </dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Changed signature from <code class="docutils literal notranslate"><span class="pre">(f,</span> <span class="pre">**kwargs)</span></code></p>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="metpy.calc.first_derivative.html#metpy.calc.first_derivative" title="metpy.calc.first_derivative"><code class="xref py py-obj docutils literal notranslate"><span class="pre">first_derivative</span></code></a></p>
@@ -817,8 +819,8 @@ of <em class="xref py py-obj">f</em> along <em class="xref py py-obj">axis</em>.
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

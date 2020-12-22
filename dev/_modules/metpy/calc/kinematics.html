@@ -44,7 +44,6 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
     <script src="../../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -239,6 +238,10 @@
 <span class="sd">    (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        vertical vorticity</span>
 
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, dx, dy)``</span>
+
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    divergence</span>
@@ -281,6 +284,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        The horizontal divergence</span>
+
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, dx, dy)``</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
@@ -325,6 +332,10 @@
 <span class="sd">    (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        Shearing Deformation</span>
 
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, dx, dy)``</span>
+
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    stretching_deformation, total_deformation</span>
@@ -367,6 +378,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        Stretching Deformation</span>
+
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, dx, dy)``</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
@@ -411,14 +426,17 @@
 <span class="sd">    (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        Total Deformation</span>
 
-<span class="sd">    See Also</span>
-<span class="sd">    --------</span>
-<span class="sd">    shearing_deformation, stretching_deformation</span>
-
 <span class="sd">    Notes</span>
 <span class="sd">    -----</span>
 <span class="sd">    If inputs have more than two dimensions, they are assumed to have either leading dimensions</span>
 <span class="sd">    of (x, y) or trailing dimensions of (y, x), depending on the value of ``dim_order``.</span>
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, dx, dy)``</span>
+
+<span class="sd">    See Also</span>
+<span class="sd">    --------</span>
+<span class="sd">    shearing_deformation, stretching_deformation</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">dudy</span><span class="p">,</span> <span class="n">dudx</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">deltas</span><span class="o">=</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span> <span class="n">dx</span><span class="p">),</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="n">y_dim</span><span class="p">,</span> <span class="n">x_dim</span><span class="p">))</span>
@@ -477,6 +495,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    `pint.Quantity` or `xarray.DataArray`</span>
 <span class="sd">        An N-dimensional array containing the advection at all grid points.</span>
+
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(scalar, wind, deltas)``</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="o">-</span><span class="nb">sum</span><span class="p">(</span>
@@ -544,6 +566,9 @@
 <span class="sd">    Conversion factor to go from [temperature units]/m/s to [temperature units/100km/3h]</span>
 <span class="sd">    :math:`1.08e4*1.e5`</span>
 
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(thta, u, v, dx, dy, dim_order=&#39;yx&#39;)``</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Get gradients of potential temperature in both x and y</span>
     <span class="n">ddy_thta</span> <span class="o">=</span> <span class="n">first_derivative</span><span class="p">(</span><span class="n">potential_temperature</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="n">dy</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">y_dim</span><span class="p">)</span>
@@ -602,6 +627,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    A 2-item tuple of arrays</span>
 <span class="sd">        A tuple of the u-component and v-component of the geostrophic wind.</span>
+
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(heights, f, dx, dy)``</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">coriolis_parameter</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>
@@ -663,6 +692,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    A 2-item tuple of arrays</span>
 <span class="sd">        A tuple of the u-component and v-component of the ageostrophic wind</span>
+
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(heights, f, dx, dy, u, v, dim_order=&#39;yx&#39;)``</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">u_geostrophic</span><span class="p">,</span> <span class="n">v_geostrophic</span> <span class="o">=</span> <span class="n">geostrophic_wind</span><span class="p">(</span>
@@ -775,6 +808,10 @@
 <span class="sd">    Since this function returns scalar values when given a profile, this will return Pint</span>
 <span class="sd">    Quantities even when given xarray DataArray profiles.</span>
 
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Renamed ``heights`` parameter to ``height`` and converted ``bottom``, ``storm_u``, and</span>
+<span class="sd">       ``storm_v`` parameters to keyword-only arguments</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">get_layer_heights</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">with_agl</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bottom</span><span class="p">)</span>
 
@@ -834,6 +871,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        absolute vorticity</span>
+
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, dx, dy, lats, dim_order=&#39;yx&#39;)``</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">coriolis_parameter</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>
@@ -920,6 +961,9 @@
 <span class="sd">    one-dimensional, and not given as `xarray.DataArray`, p[:, None, None] can be used to make</span>
 <span class="sd">    it appear multi-dimensional.)</span>
 
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(potential_temperature, pressure, u, v, dx, dy, lats)``</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="p">(</span>
         <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">potential_temperature</span><span class="p">)[</span><span class="n">vertical_dim</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span>
@@ -1000,6 +1044,10 @@
 <span class="sd">    -------</span>
 <span class="sd">    (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        barotropic potential vorticity</span>
+
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(heights, u, v, dx, dy, lats, dim_order=&#39;yx&#39;)``</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">avor</span> <span class="o">=</span> <span class="n">absolute_vorticity</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">,</span> <span class="n">latitude</span><span class="p">,</span> <span class="n">x_dim</span><span class="o">=</span><span class="n">x_dim</span><span class="p">,</span> <span class="n">y_dim</span><span class="o">=</span><span class="n">y_dim</span><span class="p">)</span>
@@ -1082,6 +1130,9 @@
 <span class="sd">    wind to both be the geostrophic wind. To do so, pass the x and y components</span>
 <span class="sd">    of the geostrophic wind for u and u_geostrophic/v and v_geostrophic.</span>
 
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, u_geostrophic, v_geostrophic, dx, dy, lats)``</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">f</span> <span class="o">=</span> <span class="n">coriolis_parameter</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>
 
@@ -1162,6 +1213,10 @@
 <span class="sd">    tuple of (..., M, N) `xarray.DataArray` or `pint.Quantity`</span>
 <span class="sd">        The components of the Q-vector in the u- and v-directions respectively</span>
 
+
+<span class="sd">    .. versionchanged:: 1.0</span>
+<span class="sd">       Changed signature from ``(u, v, temperature, pressure, dx, dy, static_stability=1)``</span>
+
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    static_stability</span>
@@ -1209,8 +1264,8 @@
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

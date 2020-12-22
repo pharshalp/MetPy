@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -753,12 +752,12 @@ to saturation before it can freely rise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pressure</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric pressure</p></li>
-<li><p><strong>temperature</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Temperature at the levels given by <em class="xref py py-obj">pressure</em></p></li>
-<li><p><strong>dewpoint</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Dewpoint at the levels given by <em class="xref py py-obj">pressure</em></p></li>
-<li><p><strong>parcel_temperature_profile</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>, optional) – The parcel’s temperature profile from which to calculate the LFC. Defaults to the
+<li><p><strong>pressure</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric pressure</p></li>
+<li><p><strong>temperature</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Temperature at the levels given by <em class="xref py py-obj">pressure</em></p></li>
+<li><p><strong>dewpoint</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Dewpoint at the levels given by <em class="xref py py-obj">pressure</em></p></li>
+<li><p><strong>parcel_temperature_profile</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>, optional) – The parcel’s temperature profile from which to calculate the LFC. Defaults to the
 surface parcel profile.</p></li>
-<li><p><strong>dewpoint_start</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>, optional) – Dewpoint of the parcel for which to calculate the LFC. Defaults to the surface
+<li><p><strong>dewpoint_start</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>, optional) – Dewpoint of the parcel for which to calculate the LFC. Defaults to the surface
 dewpoint.</p></li>
 <li><p><strong>which</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – Pick which LFC to return. Options are ‘top’, ‘bottom’, ‘wide’, ‘most_cape’, and ‘all’;
 ‘top’ returns the lowest-pressure LFC (default),
@@ -769,8 +768,8 @@ dewpoint.</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> – LFC pressure, or array of same if which=’all’</p></li>
-<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> – LFC temperature, or array of same if which=’all’</p></li>
+<li><p><a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> – LFC pressure, or array of same if which=’all’</p></li>
+<li><p><a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> – LFC temperature, or array of same if which=’all’</p></li>
 </ul>
 </p>
 </dd>
@@ -783,6 +782,9 @@ dewpoint.</p></li>
 <p>Only functions on 1D profiles (not higher-dimension vertical cross sections or grids).
 Since this function returns scalar values when given a profile, this will return Pint
 Quantities even when given xarray DataArray profiles.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Renamed <code class="docutils literal notranslate"><span class="pre">dewpt</span></code>,``dewpoint_start`` parameters to <code class="docutils literal notranslate"><span class="pre">dewpoint</span></code>, <code class="docutils literal notranslate"><span class="pre">dewpoint_start</span></code></p>
+</div>
 </dd></dl>
 
 <div style='clear:both'></div></div>
@@ -822,8 +824,8 @@ Quantities even when given xarray DataArray profiles.</p>
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>

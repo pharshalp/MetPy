@@ -44,7 +44,6 @@
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/doc_shared.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -752,11 +751,11 @@ of the measured temperature profile and parcel profile are logarithmically inter
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>pressure</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric pressure level(s) of interest, in order from highest to
+<li><p><strong>pressure</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric pressure level(s) of interest, in order from highest to
 lowest pressure</p></li>
-<li><p><strong>temperature</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric temperature corresponding to pressure</p></li>
-<li><p><strong>dewpoint</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Atmospheric dewpoint corresponding to pressure</p></li>
-<li><p><strong>parcel_profile</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code>) – Temperature profile of the parcel</p></li>
+<li><p><strong>temperature</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric temperature corresponding to pressure</p></li>
+<li><p><strong>dewpoint</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Atmospheric dewpoint corresponding to pressure</p></li>
+<li><p><strong>parcel_profile</strong> (<a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a>) – Temperature profile of the parcel</p></li>
 <li><p><strong>which_lfc</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Choose which LFC to integrate from. Valid options are ‘top’, ‘bottom’, ‘wide’,
 and ‘most_cape’. Default is ‘bottom’.</p></li>
 <li><p><strong>which_el</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – Choose which EL to integrate to. Valid options are ‘top’, ‘bottom’, ‘wide’,
@@ -765,8 +764,8 @@ and ‘most_cape’. Default is ‘top’.</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> – Convective Available Potential Energy (CAPE)</p></li>
-<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code> – Convective Inhibition (CIN)</p></li>
+<li><p><a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> – Convective Available Potential Energy (CAPE)</p></li>
+<li><p><a class="reference external" href="https://pint.readthedocs.io/en/stable/developers_reference.html#pint.Quantity" title="(in pint v0.16.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.Quantity</span></code></a> – Convective Inhibition (CIN)</p></li>
 </ul>
 </p>
 </dd>
@@ -792,6 +791,9 @@ and ‘most_cape’. Default is ‘top’.</p></li>
 <p>Only functions on 1D profiles (not higher-dimension vertical cross sections or grids).
 Since this function returns scalar values when given a profile, this will return Pint
 Quantities even when given xarray DataArray profiles.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.0: </span>Renamed <code class="docutils literal notranslate"><span class="pre">dewpt</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">dewpoint</span></code></p>
+</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="metpy.calc.lfc.html#metpy.calc.lfc" title="metpy.calc.lfc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lfc</span></code></a>, <a class="reference internal" href="metpy.calc.el.html#metpy.calc.el" title="metpy.calc.el"><code class="xref py py-obj docutils literal notranslate"><span class="pre">el</span></code></a></p>
@@ -835,8 +837,8 @@ Quantities even when given xarray DataArray profiles.</p>
   <div class="container">
     <p>
           &copy; Copyright 2020-2020, MetPy Developers. Development supported by National Science Foundation grants AGS-1344155, OAC-1740315, and AGS-1901712.<br/>
-        Last updated on Dec 21, 2020 at 08:31:56.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+        Last updated on Dec 22, 2020 at 08:39:49.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.0.<br/>
     </p>
   </div>
 </footer>
